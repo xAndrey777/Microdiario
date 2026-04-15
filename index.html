@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>One Line Diary | Mi MicroDiario</title>
+    
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#6366f1">
+    <link rel="apple-touch-icon" href="https://cdn-icons-png.flaticon.com/512/4345/4345517.png">
+    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -21,6 +26,7 @@
                     placeholder="¿Qué pasó hoy?..." 
                     maxlength="100" 
                     required
+                    autocomplete="off"
                 >
                 <button type="submit">Añadir</button>
             </form>
@@ -32,6 +38,16 @@
         </main>
     </div>
 
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('sw.js')
+            .then(reg => console.log('App lista para usar offline'))
+            .catch(err => console.log('Error al registrar app', err));
+        });
+      }
+    </script>
+    
     <script src="app.js"></script>
 </body>
 </html>
