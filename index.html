@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One Line Diary | Mi MicroDiario</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>MicroDiario ✍️</h1>
+            <p>Guarda el mejor momento de hoy en una sola línea.</p>
+        </header>
+        
+        <main>
+            <form id="diary-form">
+                <input 
+                    type="text" 
+                    id="diary-input" 
+                    placeholder="¿Qué pasó hoy?..." 
+                    maxlength="100" 
+                    required
+                >
+                <button type="submit">Añadir</button>
+            </form>
+
+            <section class="entries-section">
+                <h2>Mis Recuerdos</h2>
+                <ul id="entries-list"></ul>
+            </section>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
